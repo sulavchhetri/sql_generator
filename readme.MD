@@ -14,13 +14,13 @@ This project processes a list of tables from a crawler report and generates SQL 
 1. **Clone this repository:**
 
     ```sh
-    git clone https://github.com/sulavchhetri/sql-query-generator.git
+    git clone https://github.com/sulavchhetri/sql_generator.git
     ```
 
 2. **Navigate to the project directory:**
 
     ```sh
-    cd sql-query-generator
+    cd sql_generator
     ```
 
 3. **Open the project in VS Code:**
@@ -39,7 +39,7 @@ This project processes a list of tables from a crawler report and generates SQL 
 2. **Run the script with the required arguments:**
 
     ```sh
-    python create.py --source_schema="RPT_EDM" --target_schema="WC_DATA_MART" --unknown_schema_name="RPT_EDM" --sql_server=True
+    python create.py --source_schema="SOURCE_TABLE_OWNER" --target_schema="TARGET_TABLE_OWNER" --unknown_schema_name="SOURCE_TABLE_OWNER" --sql_server=True
     ```
 
     ### Arguments
@@ -47,7 +47,7 @@ This project processes a list of tables from a crawler report and generates SQL 
     - `--source_schema`: The source schema name (e.g., `"SOURCE_TABLE_OWNER"`).
     - `--target_schema`: The target schema name (e.g., `"TARGET_TABLE_OWNER"`).
     - `--unknown_schema_name`: The default schema name for tables with unknown schema (e.g., `"SOURCE_TABLE_OWNER"`).
-    - `--sql_server`: Set to `True` for SQL Server format, `False` for Snowflake format (e.g., `True`).
+    - `--sql_server`: Set to `"True"` for SQL Server format, `"False"` for Snowflake format (e.g., `"True"`).
 
 3. **Get the output:**
 

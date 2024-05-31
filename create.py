@@ -86,9 +86,10 @@ if __name__ == "__main__":
     parser.add_argument('--source_schema', type=str, required=True, help='Source schema name')
     parser.add_argument('--target_schema', type=str, required=True, help='Target schema name')
     parser.add_argument('--default', type=str, default='', help='Default schema name for unknown tables')
-    parser.add_argument('--sql_server', type=bool, default=True, help='Set to True for SQL Server format, False for Snowflake format')
+    parser.add_argument('--sql_server', type=str, default='True', help='Set to True for SQL Server format, False for Snowflake format')
 
     args = parser.parse_args()
-
+    
+    args.sql_server = True if args.sql_server.upper() == "TRUE" else False
     crawler_dict = get_crawler_in_json(args.source_schema, args.target_schema, args.default)
     save_sql_query(crawler_dict=crawler_dict, sql_server=args.sql_server, unknown_schema_name=args.default)
